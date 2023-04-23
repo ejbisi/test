@@ -112,10 +112,62 @@ const userAge = 35;
 
 // console.log(arrFunc([100, 200, 300]));
 
-const zmieniarka = (imie) => {
-  //const lowerCaseName = imie.toLowerCase();
-  return imie[0].toUpperCase() + imie.slice(1).toLowerCase();
-  // return imie.slice(2, -3);
-};
+// const zmieniarka = (imie) => {
+//   //const lowerCaseName = imie.toLowerCase();
+//   return imie[0].toUpperCase() + imie.slice(1).toLowerCase();
+//   // return imie.slice(2, -3);
+// };
 
-console.log(zmieniarka("JASIU"));
+// console.log(zmieniarka("JASIU"));
+
+const names = [
+  "Katarzyna",
+  "Małgosia",
+  "Leosia",
+  "Andre",
+  "Jasiu",
+  "Janusz",
+  "Anna",
+];
+
+const namesList = document.querySelector(".names-list");
+
+names.forEach((name) => {
+  const li = document.createElement("li");
+  li.innerText = name;
+  console.log(li);
+  //li.style.color = "red";
+  li.classList.add("name");
+  namesList.appendChild(li);
+});
+
+const gamesList = document.querySelector(".games");
+
+const games = [
+  { team1: "Barcelona", draw: "X", team2: "Atl. Madryt" },
+  { team1: "Grunwald Halemba", draw: "X", team2: "Wawel Wirek" },
+  { team1: "Polonia Bytom", draw: "X", team2: "Legia Warszawa" },
+];
+
+games.forEach((game) => {
+  const div = document.createElement("div");
+  div.classList.add("button-row");
+
+  const button1 = document.createElement("button");
+  button1.classList.add("button");
+  button1.innerText = game.team1;
+
+  const button2 = document.createElement("button");
+  button2.classList.add("button");
+  button2.innerText = game.draw;
+
+  const button3 = document.createElement("button");
+  button3.classList.add("button");
+  button3.innerText = game.team2;
+
+  div.appendChild(button1);
+  div.appendChild(button2);
+  div.appendChild(button3);
+
+  gamesList.appendChild(div);
+});
